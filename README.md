@@ -31,6 +31,16 @@ There are no tests due to the multi-node nature of the exercise.
 A solution proposal is included in proposal.erl
 Don't copy it! 
 
+### Level Up!
+If you want to, you can try to add the following challenge to the exercise:
+
+While the ping-pong program is running, update the code *without interrupting it*
+so that the ping and pong messages are changed.
+
+For example, instead of printing "Received ping", you can print "Received ping v2"
+
+Remember to use fully qualified function calls to call new code.
+
 ## Credits
 Credits for the initial versions of the presentation and the exercise
 with its solution goes to Gianfranco Alongi, https://github.com/Gianfrancoalongi
