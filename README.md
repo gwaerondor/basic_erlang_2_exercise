@@ -9,11 +9,12 @@ Write a small Ping-Pong program that runs in 2 nodes.
 The program sends a message back and forth between the shell processes,
 which is printed to the shell.
 Make use of the following erlang functionality:
+```erlang
     register
     spawn
     receive
     !
-
+```
 The program has to be kickstarted manually via manual interaction - this is okay.
 
 ### Skeleton
