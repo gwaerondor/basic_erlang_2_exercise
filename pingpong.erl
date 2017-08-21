@@ -1,24 +1,17 @@
 -module(pingpong).
--export([run/1]).
+-export([run/0]).
 
-run(Name) when is_atom(Name) ->
-    spawn(init(Name));
-run(_) ->
-    io:format("Error: a process name must be an atom~n"),
-    {error, invalid_process_name}.
+run() ->
+    Ping_pid = spawn(fun() -> ping() end),
+    Pong_pid = spawn(fun() -> pong() end),
+    Ping_pid ! {Pong_pid, ping}.
+    
+ping() ->
+    io:format("Ping...~n"),
+    timer:sleep(1000),
+    {error, not_implemented}.
 
-init(Name) ->
-    fun() ->
-	    register(Name, self()),
-	    loop()
-    end.
-
-loop() ->
-    receive Message ->
-	    io:format("Received: ~p~n", [Message]),
-	    handle(Message)
-    end,
-    loop().
-
-handle(Message) ->
+pong() ->
+    io:format("Pong...~n"),
+    timer:sleep(1000),
     {error, not_implemented}.

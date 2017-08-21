@@ -1,4 +1,4 @@
--module(proposal).
+-module(proposal_nodes).
 -author(egiaalo).
 -export([run/1, loop/0]).
 
