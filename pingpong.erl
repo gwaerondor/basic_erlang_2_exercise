@@ -6,7 +6,7 @@
 run() ->
     Ping_pid = spawn(fun() -> handle_ping() end),
     Pong_pid = spawn(fun() -> handle_pong() end),
-    Pong_pid ! {Ping_pid, ping}.
+    Pong_pid ! {Ping_pid, pong}.
     
 handle_ping() ->
     io:format("Ping...~n"),
