@@ -27,9 +27,10 @@ Be aware that the solution needs to be loaded and kickstarted manually.
 
 There are no tests due to the multi-node nature of the exercise.
 
-### Solution proposal
-A solution proposal is included in proposal.erl
-Don't copy it! 
+### Alternative version
+There's a single-node version of this program included in the file
+pingpong_local.erl. The main difference is that the two pingpong processes
+are on the same node. You can use it as reference.
 
 ### Level Up!
 If you want to, you can try to add the following challenge to the exercise:
@@ -40,6 +41,9 @@ so that the ping and pong messages are changed.
 For example, instead of printing "Received ping", you can print "Received ping v2"
 
 Remember to use fully qualified function calls to call new code.
+
+### Solution proposal
+There's a proposed solution in the file `proposal.erl`.
 
 ## Credits
 Credits for the initial versions of the presentation and the exercise

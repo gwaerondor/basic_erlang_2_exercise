@@ -1,20 +1,17 @@
 -module(pingpong).
 -export([run/0]).
 
-% For fully qualified calls, the functions must be exported.
+%%% Kickstart the pingpong process by sending
+%%% a message from the shell after connecting the nodes.
+%%%
+%%% For example:
+%%% {pingpong, other_node@host} ! {whereis(pingpong), ping}.
 
 run() ->
-    Ping_pid = spawn(fun() -> handle_ping() end),
-    Pong_pid = spawn(fun() -> handle_pong() end),
-    Pong_pid ! {Ping_pid, pong}.
-    
-handle_ping() ->
-    io:format("Ping...~n"),
+    Pid = spawn(fun() -> loop() end),
+    register(pingpong, Pid).
+
+loop() ->
+    io:format("Received... ~p~n", [nothing]),
     timer:sleep(1000),
     {error, not_implemented}.
-
-handle_pong() ->
-    io:format("Pong...~n"),
-    timer:sleep(1000),
-    {error, not_implemented}.
-
